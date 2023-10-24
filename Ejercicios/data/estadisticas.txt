@@ -1,0 +1,7 @@
+L0 > 86 caracteres | 13 Palabras
+L1 > 106 caracteres | 20 Palabras
+L2 > 101 caracteres | 15 Palabras
+L3 > 113 caracteres | 16 Palabras
+L4 > 110 caracteres | 16 Palabras
+
+Lineas> 5 Caracteres> 516 Palabras> 80
