@@ -1,4 +1,4 @@
-package ejercicio2x01;
+package unidad1.ejercicio2x01;
 
 public class Departamento {
     private int codigo;
