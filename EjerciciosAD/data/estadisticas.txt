@@ -1,7 +1,6 @@
-L0 > 86 caracteres | 13 Palabras
-L1 > 106 caracteres | 20 Palabras
-L2 > 101 caracteres | 15 Palabras
-L3 > 113 caracteres | 16 Palabras
-L4 > 110 caracteres | 16 Palabras
-
-Lineas> 5 Caracteres> 516 Palabras> 80
+Línea 1: 20 caracteres y 4 palabras
+Línea 2: 4 caracteres y 1 palabras
+Línea 3: 27 caracteres y 6 palabras
+Línea 4: 5 caracteres y 1 palabras
+Línea 5: 14 caracteres y 4 palabras
+Total: 5 líneas, 70 caracteres y 16 palabras
