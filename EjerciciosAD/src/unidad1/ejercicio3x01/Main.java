@@ -1,8 +1,6 @@
 package unidad1.ejercicio3x01;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
