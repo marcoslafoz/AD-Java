@@ -2,10 +2,7 @@ package unidad1.ejercicio4x01;
 
 import java.io.Serializable;
 import java.util.Date;
-
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Escritor implements Serializable {
     private static final long serialVersionUID = 2713965969541462011L; // Agrega este serialVersionUID
