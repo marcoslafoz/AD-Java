@@ -14,3 +14,6 @@
 - #### [ejercicio3x02](EjerciciosAD/src/unidad1/ejercicio3x02)
 - #### [ejercicio4x01](EjerciciosAD/src/unidad1/ejercicio4x01)
 - #### [ejercicio4x02](EjerciciosAD/src/unidad1/ejercicio4x02)
+
+- ### [UD2-Actividades-(BBDD-Relacionales)](UD2-Actividades-(BBDD-Relacionales).pdf)
+- #### [ejemplo](EjerciciosAD/src/unidad2/ejemplo)
