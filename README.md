@@ -15,5 +15,7 @@
 - #### [ejercicio4x01](EjerciciosAD/src/unidad1/ejercicio4x01)
 - #### [ejercicio4x02](EjerciciosAD/src/unidad1/ejercicio4x02)
 
-- ### [UD2-Actividades-(BBDD-Relacionales)](UD2-Actividades-(BBDD-Relacionales).pdf)
+- ### [UD2-Actividades1-(BBDD-Relacionales)](UD2-Actividades-(BBDD-Relacionales).pdf)
 - #### [ejemplo](EjerciciosAD/src/unidad2/ejemplo)
+
+- ### [UD2-Actividades2(SentenciasPreparadasyTransacciones)](UD2-Actividades2(SentenciasPreparadasyTransacciones).pdf)
