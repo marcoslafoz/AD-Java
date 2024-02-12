@@ -1,0 +1,31 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 17:06:55 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is opened by 4308@LAPTOP-MLAFOZ
+
+[2024-02-12 17:06:55 #2 store] 
+Configuration path: ?
+
+[2024-02-12 17:06:55 #3 type] 
+Type modelo.Departamento is not enhanced.
+
+[2024-02-12 17:06:55 #4 type] 
+Type modelo.Empleado is not enhanced.
+
+[2024-02-12 17:06:55 #5 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is closed by 4308@LAPTOP-MLAFOZ
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 17:13:05 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is opened by 13196@LAPTOP-MLAFOZ
+
+[2024-02-12 17:13:05 #2 store] 
+Configuration path: ?
+
+[2024-02-12 17:13:05 #3 type] 
+Type modelo.Departamento is not enhanced.
+
+[2024-02-12 17:13:05 #4 type] 
+Type modelo.Empleado is not enhanced.
+
