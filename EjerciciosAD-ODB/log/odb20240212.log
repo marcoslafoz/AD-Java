@@ -1,31 +1,139 @@
 ------------------------------------------------------------------------------------------------------------------------
 
-[2024-02-12 17:06:55 #1 store] 
-Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is opened by 4308@LAPTOP-MLAFOZ
+[2024-02-12 18:05:21 #1 store] 
+Database 'C:\Users\Marcos\Downloads\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\campeonato.odb' is opened by 19780@LAPTOP-MLAFOZ
 
-[2024-02-12 17:06:55 #2 store] 
+[2024-02-12 18:05:21 #2 store] 
 Configuration path: ?
 
-[2024-02-12 17:06:55 #3 type] 
-Type modelo.Departamento is not enhanced.
+[2024-02-12 18:05:21 #3 type] 
+Type modelo.Equipo is not enhanced.
 
-[2024-02-12 17:06:55 #4 type] 
-Type modelo.Empleado is not enhanced.
-
-[2024-02-12 17:06:55 #5 store] 
-Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is closed by 4308@LAPTOP-MLAFOZ
+[2024-02-12 18:05:21 #4 type] 
+Type modelo.Jugador is not enhanced.
 
 ------------------------------------------------------------------------------------------------------------------------
 
-[2024-02-12 17:13:05 #1 store] 
-Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is opened by 13196@LAPTOP-MLAFOZ
+[2024-02-12 18:05:30 #1 store] 
+Database 'C:\Users\Marcos\Downloads\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\campeonato.odb' has been recovered (tr. 1-3)
 
-[2024-02-12 17:13:05 #2 store] 
+[2024-02-12 18:05:30 #2 store] 
+Database 'C:\Users\Marcos\Downloads\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\campeonato.odb' is opened by 10624@LAPTOP-MLAFOZ
+
+[2024-02-12 18:05:30 #3 store] 
 Configuration path: ?
 
-[2024-02-12 17:13:05 #3 type] 
+[2024-02-12 18:05:30 #4 type] 
+Type modelo.Equipo is not enhanced.
+
+[2024-02-12 18:05:30 #5 type] 
+Type modelo.Jugador is not enhanced.
+
+[2024-02-12 18:05:30 #6 type] 
+Type modelo.Partido is not enhanced.
+
+[2024-02-12 18:05:30 #7 store] 
+Database 'C:\Users\Marcos\Downloads\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\campeonato.odb' is closed by 10624@LAPTOP-MLAFOZ
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 18:12:24 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\campeonato.odb' is opened by 9148@LAPTOP-MLAFOZ
+
+[2024-02-12 18:12:24 #2 store] 
+Configuration path: ?
+
+[2024-02-12 18:12:25 #3 type] 
+Type modelo.Equipo is not enhanced.
+
+[2024-02-12 18:12:25 #4 type] 
+Type modelo.Jugador is not enhanced.
+
+[2024-02-12 18:12:25 #5 type] 
+Type modelo.Partido is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 18:13:52 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\personal.odb' is opened by 20356@LAPTOP-MLAFOZ
+
+[2024-02-12 18:13:52 #2 store] 
+Configuration path: ?
+
+[2024-02-12 18:13:52 #3 type] 
 Type modelo.Departamento is not enhanced.
 
-[2024-02-12 17:13:05 #4 type] 
+[2024-02-12 18:13:52 #4 type] 
 Type modelo.Empleado is not enhanced.
+
+[2024-02-12 18:13:52 #5 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\personal.odb' is closed by 20356@LAPTOP-MLAFOZ
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 18:14:02 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\personal.odb' is opened by 19912@LAPTOP-MLAFOZ
+
+[2024-02-12 18:14:02 #2 store] 
+Configuration path: ?
+
+[2024-02-12 18:14:02 #3 type] 
+Type modelo.Departamento is not enhanced.
+
+[2024-02-12 18:14:02 #4 type] 
+Type modelo.Empleado is not enhanced.
+
+[2024-02-12 18:14:02 #5 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\personal.odb' is closed by 19912@LAPTOP-MLAFOZ
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 18:16:30 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\personal.odb' is opened by 20328@LAPTOP-MLAFOZ
+
+[2024-02-12 18:16:30 #2 store] 
+Configuration path: ?
+
+[2024-02-12 18:16:30 #3 type] 
+Type modelo.Departamento is not enhanced.
+
+[2024-02-12 18:16:30 #4 type] 
+Type modelo.Empleado is not enhanced.
+
+[2024-02-12 18:16:30 #5 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\UD4 - Ejemplos ObjectDB [Eclipse Java]\data\personal.odb' is closed by 20328@LAPTOP-MLAFOZ
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 18:18:00 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is opened by 16260@LAPTOP-MLAFOZ
+
+[2024-02-12 18:18:00 #2 store] 
+Configuration path: ?
+
+[2024-02-12 18:18:00 #3 type] 
+Type modelo.Departamento is not enhanced.
+
+[2024-02-12 18:18:00 #4 type] 
+Type modelo.Empleado is not enhanced.
+
+[2024-02-12 18:18:00 #5 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is closed by 16260@LAPTOP-MLAFOZ
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 18:18:22 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is opened by 17204@LAPTOP-MLAFOZ
+
+[2024-02-12 18:18:22 #2 store] 
+Configuration path: ?
+
+[2024-02-12 18:18:22 #3 type] 
+Type modelo.Departamento is not enhanced.
+
+[2024-02-12 18:18:22 #4 type] 
+Type modelo.Empleado is not enhanced.
+
+[2024-02-12 18:18:22 #5 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is closed by 17204@LAPTOP-MLAFOZ
 

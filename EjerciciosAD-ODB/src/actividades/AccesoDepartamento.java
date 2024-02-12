@@ -1,4 +1,4 @@
-package ejercicios;
+package actividades;
 
 import java.util.List;
 
@@ -9,7 +9,6 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import modelo.Departamento;
-import modelo.Empleado;
 
 public class AccesoDepartamento {
 	public static void mostrarMenu() {

@@ -1,4 +1,4 @@
-package ejercicios;
+package actividades;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
