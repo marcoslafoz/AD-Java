@@ -137,3 +137,20 @@ Type modelo.Empleado is not enhanced.
 [2024-02-12 18:18:22 #5 store] 
 Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is closed by 17204@LAPTOP-MLAFOZ
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-02-12 18:19:41 #1 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is opened by 15564@LAPTOP-MLAFOZ
+
+[2024-02-12 18:19:41 #2 store] 
+Configuration path: ?
+
+[2024-02-12 18:19:41 #3 type] 
+Type modelo.Departamento is not enhanced.
+
+[2024-02-12 18:19:41 #4 type] 
+Type modelo.Empleado is not enhanced.
+
+[2024-02-12 18:19:41 #5 store] 
+Database 'C:\Users\Marcos\Documents\Repositorios\AD-Java\EjerciciosAD-ODB\data\personal.odb' is closed by 15564@LAPTOP-MLAFOZ
+
