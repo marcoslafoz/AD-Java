@@ -28,6 +28,10 @@ public class Actividad_1x02 {
 			case 0:
 				System.out.println("Saliendo del programa.");
 				break;
+			
+			case 1:
+				AccesoEmpleado.insertarEmpleados();
+				break;
 
 			case 2:
 				AccesoEmpleado.consultarEmpleados();

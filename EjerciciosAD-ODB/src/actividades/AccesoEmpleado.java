@@ -47,4 +47,47 @@ public class AccesoEmpleado {
 		emf.close();
 	}
 
+	public static void insertarEmpleados() {
+
+		int codigoDptoEmpleado = Teclado.leerEntero("Codigo departamento: ");
+		Departamento dptoEmpleado = AccesoDepartamento.consultarDepartamentosPorCodigo(codigoDptoEmpleado);
+
+		if (dptoEmpleado != null) {
+
+			Empleado empleado = new Empleado();
+
+			empleado.setNombre(Teclado.leerCadena("Nombre: "));
+			empleado.setFechaAlta(Teclado.leerCadena("Fecha alta: "));
+			empleado.setSalario(Teclado.leerReal("Salario: "));
+			empleado.setDepartamento(dptoEmpleado);
+
+			EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/personal.odb");
+			EntityManager entityManager = emf.createEntityManager();
+			EntityTransaction transaction = entityManager.getTransaction();
+
+			try {
+				transaction.begin();
+
+				entityManager.persist(empleado);
+
+				transaction.commit();
+				System.out.println("Empleado insertado correctamente.");
+			} catch (Exception e) {
+				if (transaction != null && transaction.isActive()) {
+					transaction.rollback();
+				}
+				// e.printStackTrace();
+			} finally {
+				if (entityManager != null && entityManager.isOpen()) {
+					entityManager.close();
+				}
+			}
+
+			emf.close();
+		} else {
+			System.out.println("No existe ningun departamento con id = " + codigoDptoEmpleado);
+		}
+
+	}
+
 }

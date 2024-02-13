@@ -25,7 +25,7 @@ public class AccesoDepartamento {
 	////////////////////////////////////////////
 	public static void consultarDepartamentos() {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/personal.odb");
-		EntityManager conexion = null;		
+		EntityManager conexion = null;
 		try {
 			conexion = emf.createEntityManager();
 			TypedQuery<Departamento> consulta = conexion.createQuery("SELECT d FROM Departamento d",
@@ -169,6 +169,32 @@ public class AccesoDepartamento {
 				conexion.close();
 			}
 		}
+	}
+
+	////////////////////////////////////////////
+	public static Departamento consultarDepartamentosPorCodigo(int codigo) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/personal.odb");
+		EntityManager conexion = emf.createEntityManager();
+
+		Departamento departamento = null;
+
+		try {
+			TypedQuery<Departamento> consulta = conexion
+					.createQuery("SELECT d FROM Departamento d WHERE d.codigo = :codigo", Departamento.class);
+			consulta.setParameter("codigo", codigo);
+
+			List<Departamento> departamentos = consulta.getResultList();
+
+			if (!departamentos.isEmpty())
+				departamento = departamentos.get(0);
+
+		} finally {
+			if (conexion != null && conexion.isOpen()) {
+				conexion.close();
+			}
+		}
+		return departamento;
+
 	}
 
 }
