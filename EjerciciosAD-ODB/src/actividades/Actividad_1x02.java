@@ -21,7 +21,7 @@ public class Actividad_1x02 {
 		int opcion = 1;
 
 		while (opcion != 0) {
-			AccesoDepartamento.mostrarMenu();
+			AccesoEmpleado.mostrarMenu();
 			opcion = Teclado.leerEntero("Introduce una opción: ");
 
 			switch (opcion) {
