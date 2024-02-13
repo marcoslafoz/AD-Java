@@ -21,6 +21,12 @@ public class Empleado {
 	@Persistent
 	private Departamento departamento;
 
+	@Override
+	public String toString() {
+		return "Empleado [Código = " + codigo + ", Nombre = " + nombre + ", Fecha alta = " + fechaAlta 
+				+ ", Salario = " + salario + ", Departamento = " + departamento.toString() + "]";
+	}
+
 	// Constructor y getters/setters
 
 	public int getCodigo() {

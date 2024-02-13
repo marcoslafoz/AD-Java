@@ -25,7 +25,7 @@ public class AccesoDepartamento {
 	////////////////////////////////////////////
 	public static void consultarDepartamentos() {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/personal.odb");
-		EntityManager conexion = null;
+		EntityManager conexion = null;		
 		try {
 			conexion = emf.createEntityManager();
 			TypedQuery<Departamento> consulta = conexion.createQuery("SELECT d FROM Departamento d",
@@ -36,7 +36,7 @@ public class AccesoDepartamento {
 			} else {
 				for (Departamento d : departamentos)
 					System.out.println(d.toString());
-				System.out.println("Se han consultado " + departamentos.size() + " jugadores de la base de datos");
+				System.out.println("Se han consultado " + departamentos.size() + " departamentos de la base de datos");
 			}
 		} finally {
 			if (conexion != null) {
@@ -44,12 +44,14 @@ public class AccesoDepartamento {
 			}
 		}
 		emf.close();
+
 	}
 
 	////////////////////////////////////////////
-	public static void consultarDepartamentosPorNombre(String nombre) {
+	public static int consultarDepartamentosPorNombre(String nombre) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("data/personal.odb");
 		EntityManager conexion = emf.createEntityManager();
+		int numeroDepartamentos = 0;
 
 		try {
 			TypedQuery<Departamento> consulta = conexion
@@ -64,12 +66,14 @@ public class AccesoDepartamento {
 				for (Departamento d : departamentos)
 					System.out.println(d.toString());
 				System.out.println("Se han consultado " + departamentos.size() + " departamentos de la base de datos");
+				numeroDepartamentos = departamentos.size();
 			}
 		} finally {
 			if (conexion != null && conexion.isOpen()) {
 				conexion.close();
 			}
 		}
+		return numeroDepartamentos;
 	}
 
 	////////////////////////////////////////////
