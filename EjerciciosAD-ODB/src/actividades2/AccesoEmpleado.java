@@ -1,4 +1,4 @@
-package actividades;
+package actividades2;
 
 import java.util.List;
 
@@ -16,8 +16,7 @@ public class AccesoEmpleado {
 	public static void mostrarMenu() {
 		System.out.println("\nMenú de Opciones:");
 		System.out.println("0) Salir del programa.");
-		System.out.println(
-				"1) Insertar un empleado en la base de datos. (El departamento tendrá que existir previamente.)");
+		System.out.println("1) Insertar un empleado en la base de datos. (El departamento tendrá que existir previamente.)");
 		System.out.println("2) Consultar todos los empleados de la base de datos.");
 		System.out.println("3) Consultar un empleado, por código, de la base de datos.");
 		System.out.println("4) Actualizar un empleado, por código, de la base de datos.");

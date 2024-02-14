@@ -1,4 +1,4 @@
-package actividades;
+package actividades2;
 
 import entrada.Teclado;
 import modelo.Departamento;
