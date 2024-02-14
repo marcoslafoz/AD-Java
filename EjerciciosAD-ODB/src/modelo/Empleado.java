@@ -24,7 +24,7 @@ public class Empleado {
 	@Override
 	public String toString() {
 		return "Empleado [Código = " + codigo + ", Nombre = " + nombre + ", Fecha alta = " + fechaAlta 
-				+ ", Salario = " + salario + ", Departamento = " + departamento.toString() + "]";
+				+ ", Salario = " + salario + ", " + departamento.toString() + "]";
 	}
 
 	// Constructor y getters/setters

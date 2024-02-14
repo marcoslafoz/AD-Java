@@ -1,6 +1,8 @@
 package actividades;
 
 import entrada.Teclado;
+import modelo.Departamento;
+import modelo.Empleado;
 
 /*
 ACTIVIDAD 1x02
@@ -28,13 +30,53 @@ public class Actividad_1x02 {
 			case 0:
 				System.out.println("Saliendo del programa.");
 				break;
-			
+
 			case 1:
 				AccesoEmpleado.insertarEmpleados();
 				break;
 
 			case 2:
 				AccesoEmpleado.consultarEmpleados();
+				break;
+
+			case 3:
+				Empleado empleadoPorCodigo = AccesoEmpleado.consultarEmpleadoPorCodigo(
+						Teclado.leerEntero("Introduce el codigo del empleado a consultar: "));
+				if (empleadoPorCodigo != null) {
+					System.out.println(empleadoPorCodigo.toString());
+				} else {
+					System.out.println("No se ha encontrado ningun resultado.");
+				}
+				break;
+
+			case 4:
+
+				int codigoEmpleadoActualizar = Teclado.leerEntero("Introduce el codigo del empleado a actualziar: ");
+				String nombreEmpleadoActualizar = Teclado.leerCadena("Nombre del empleado: ");
+				Departamento depapartamentoEmpleadoActualizar = AccesoDepartamento
+						.consultarDepartamentosPorCodigo(Teclado.leerEntero("Codigo del departamento: "));
+				String fechaAltaEmpleadoActualizar = Teclado.leerCadena("Introduce la fecha de alta: ");
+				double salarioEmpleadoActualizar = Teclado.leerReal("Introduce el salario: ");
+
+				boolean empleadoActualizado = AccesoEmpleado.actualizarEmpleado(codigoEmpleadoActualizar,
+						nombreEmpleadoActualizar, fechaAltaEmpleadoActualizar, salarioEmpleadoActualizar,
+						depapartamentoEmpleadoActualizar);
+
+				if (empleadoActualizado)
+					System.out.println("Empleado actualizado correctamente");
+
+				break;
+
+			case 5:
+				boolean empleadoEliminado = AccesoEmpleado
+						.eliminarEmpleado(Teclado.leerEntero("Introduce el codigo del empleado a eliminar: "));
+
+				if (empleadoEliminado) {
+					System.out.println("El empleado se ha eliminado correctamente");
+				} else {
+					System.out.println("El empleado no se ha encontrado");
+				}
+
 				break;
 
 			default:
