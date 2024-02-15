@@ -62,6 +62,7 @@ public class AccesoJugador {
 		try {
 
 			conexion = emf.createEntityManager();
+			// TODO: "SELECT j FROM Jugador j ORDER BY j.nombre ASC"
 			TypedQuery<Jugador> consulta = conexion.createQuery("SELECT j FROM Jugador j", Jugador.class);
 			jugadores = consulta.getResultList();
 
