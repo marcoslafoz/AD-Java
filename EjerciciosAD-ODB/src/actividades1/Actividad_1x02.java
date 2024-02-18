@@ -1,7 +1,6 @@
 package actividades1;
 
 import entrada.Teclado;
-import modelo.Equipo;
 
 
 public class Actividad_1x02 {

@@ -1,7 +1,6 @@
 package actividades2;
 
 import entrada.Teclado;
-import modelo.Departamento;
 
 /*
 ACTIVIDAD 1x01
@@ -15,7 +14,7 @@ los departamentos de la base de datos personal mediante el siguiente menú de op
 5) Eliminar un departamento, por clave, de la base de datos.
 */
 
-public class Actividad_1x01 {
+public class Actividad_2x01 {
 	public static void main(String[] args) {
 
 		int opcion = 1;

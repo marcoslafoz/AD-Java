@@ -9,7 +9,6 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import entrada.Teclado;
-import modelo.Departamento;
 
 public class AccesoDepartamento {
 	public static void mostrarMenu() {

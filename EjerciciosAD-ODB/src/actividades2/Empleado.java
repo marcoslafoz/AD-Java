@@ -1,4 +1,4 @@
-package modelo;
+package actividades2;
 
 import javax.jdo.annotations.*;
 

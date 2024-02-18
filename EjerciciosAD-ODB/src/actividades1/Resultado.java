@@ -1,8 +1,8 @@
-package modelo;
+package actividades1;
 
 import javax.persistence.Embeddable;
 
-// Clase Resultado que contiene puntuacion local y puntuación visitante.
+// Clase Resultado que contiene puntuacion local y puntuaciï¿½n visitante.
 @Embeddable
 public class Resultado {
 
@@ -10,16 +10,16 @@ public class Resultado {
 	private int puntuacionLocal;
 	private int puntuacionVisitante;
 	
-	// Crea un resultado a partir de 2 parámetros.
+	// Crea un resultado a partir de 2 parï¿½metros.
 	public Resultado(int puntuacionLocal, int puntuacionVisitante) {
 		this.puntuacionLocal = puntuacionLocal;
 		this.puntuacionVisitante = puntuacionVisitante;
 	}
 	
-	// Valida los datos de un resultado según las condiciones:
-	// - La puntuación local debe ser cero o positiva.
-	// - La puntuación visitante debe ser cero o positiva.
-	// Devuelve verdadero si los datos de un resultado son válidos.
+	// Valida los datos de un resultado segï¿½n las condiciones:
+	// - La puntuaciï¿½n local debe ser cero o positiva.
+	// - La puntuaciï¿½n visitante debe ser cero o positiva.
+	// Devuelve verdadero si los datos de un resultado son vï¿½lidos.
 	// Devuelve falso en caso contrario.
 	public static boolean esValido(int puntuacionLocal, int puntuacionVisitante) {
 		if (puntuacionLocal >= 0 && puntuacionVisitante >= 0) {

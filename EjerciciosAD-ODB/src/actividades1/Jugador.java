@@ -1,11 +1,13 @@
-package modelo;
+package actividades1;
 
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-// Clase Jugador que contiene código, nombre y fecha de nacimiento.
+import actividades2.Fecha;
+
+// Clase Jugador que contiene cï¿½digo, nombre y fecha de nacimiento.
 @Entity
 public class Jugador {
 	
@@ -16,13 +18,13 @@ public class Jugador {
 	private String nombre;
 	private Fecha fechaNacimiento;
 	
-	// Crea un jugador a partir de 2 parámetros.
+	// Crea un jugador a partir de 2 parï¿½metros.
 	public Jugador(String nombre, Fecha fechaNacimiento) {
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	
-	// Crea un jugador a partir de 1 parámetro.
+	// Crea un jugador a partir de 1 parï¿½metro.
 	public Jugador(String nombre) {
 		this.nombre = nombre;
 		this.fechaNacimiento = new Fecha();
@@ -52,13 +54,13 @@ public class Jugador {
 	@Override
 	public String toString() {
 		return 
-			"Jugador [Código = " + this.codigo +
+			"Jugador [Cï¿½digo = " + this.codigo +
 			", Nombre = " + this.nombre + 
 			", FechaNacimiento = " + this.fechaNacimiento.toString() + 
 			"]";
 	}
 
-	// Devuelve un código hash calculado a partir del código del jugador. 
+	// Devuelve un cï¿½digo hash calculado a partir del cï¿½digo del jugador. 
 	@Override
 	public int hashCode() {
 		return Objects.hash(this.codigo);
@@ -66,7 +68,7 @@ public class Jugador {
 
 	// Devuelve verdadero si este jugador es igual a otro jugador.
 	// Devuelve falso en caso contrario.
-	// Dos jugadores son iguales cuando sus códigos son iguales.
+	// Dos jugadores son iguales cuando sus cï¿½digos son iguales.
 	@Override
 	public boolean equals(Object objeto) {
 		if (this == objeto) {

@@ -1,4 +1,4 @@
-package modelo;
+package actividades1;
 
 import java.util.Arrays;
 import java.util.LinkedHashSet;
@@ -18,7 +18,7 @@ public class Equipo {
 	@OneToMany
 	private Set<Jugador> jugadores;
 	
-	// Crea un equipo a partir de 2 parámetros.
+	// Crea un equipo a partir de 2 parï¿½metros.
 	public Equipo(String nombre, String ciudad) {
 		this.nombre = nombre;
 		this.ciudad = ciudad;

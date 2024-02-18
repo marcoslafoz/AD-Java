@@ -1,7 +1,9 @@
-package modelo;
+package actividades1;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+
+import actividades2.Fecha;
 
 // Clase Partido que contiene equipo local, equipo visitante, fecha y resultado.
 @Entity
@@ -15,7 +17,7 @@ public class Partido {
 	private Fecha fecha;
 	private Resultado resultado;
 	
-	// Crea un partido a partir de 4 parámetros.
+	// Crea un partido a partir de 4 parï¿½metros.
 	public Partido(Equipo equipoLocal, Equipo equipoVisitante, 
 	               Fecha fecha, Resultado resultado) {
 		this.equipoLocal = equipoLocal;

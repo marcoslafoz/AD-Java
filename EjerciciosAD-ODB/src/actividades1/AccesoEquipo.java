@@ -5,8 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import modelo.Equipo;
-
 public class AccesoEquipo {
 	public static void mostrarMenu() {
 		System.out.println("\nMenú de Opciones:");

@@ -1,9 +1,9 @@
-package modelo;
+package examen;
 
 import java.util.Random;
 import javax.persistence.Embeddable;
 
-// Clase Fecha que contiene día, mes y año.
+// Clase Fecha que contiene dï¿½a, mes y aï¿½o.
 @Embeddable
 public class Fecha implements Comparable<Fecha> {
 
@@ -12,7 +12,7 @@ public class Fecha implements Comparable<Fecha> {
 	private int mes;
 	private int agno;
 
-	// Crea una fecha a partir de 3 parámetros.
+	// Crea una fecha a partir de 3 parï¿½metros.
 	public Fecha(int dia, int mes, int agno) {
 		this.dia = dia;
 		this.mes = mes;
@@ -25,14 +25,14 @@ public class Fecha implements Comparable<Fecha> {
 		this.agno = aleatorio.nextInt(2005-1995+1) + 1995; // entre 1995 y 2005
 		this.mes = aleatorio.nextInt(12) + 1;              // entre 1 y 12
 		int numeroDiasMes = obtenerNumeroDiasDeMes(this.mes, this.agno);
-		this.dia = aleatorio.nextInt(numeroDiasMes) + 1;   // entre 1 y número de días de mes
+		this.dia = aleatorio.nextInt(numeroDiasMes) + 1;   // entre 1 y nï¿½mero de dï¿½as de mes
 	}
 
-	// Devuelve verdadero si un año es bisiesto.
+	// Devuelve verdadero si un aï¿½o es bisiesto.
 	// Devuelve falso en caso contrario.
-	// Un año es bisiesto si cumple dos condiciones:
-	// - El año es divisible entre 4.
-	// - El año no es divisible entre 100 o el año es divisible entre 400.
+	// Un aï¿½o es bisiesto si cumple dos condiciones:
+	// - El aï¿½o es divisible entre 4.
+	// - El aï¿½o no es divisible entre 100 o el aï¿½o es divisible entre 400.
 	private static boolean esBisiesto(int agno) {
 		boolean bisiesto = false;
 		if (agno >= 1583) {
@@ -43,11 +43,11 @@ public class Fecha implements Comparable<Fecha> {
 		return bisiesto;
 	}
 
-	// Devuelve el número de días que tiene un mes de un año:
-	// - Febrero tiene 28 días si el año no es bisiesto.
-	// - Febrero tiene 29 días si el año es bisiesto.
-	// - Abril, Junio, Septiembre y Noviembre tienen 30 días.
-	// - Enero, Marzo, Mayo, Julio, Agosto, Octubre y Diciembre tienen 31 días.
+	// Devuelve el nï¿½mero de dï¿½as que tiene un mes de un aï¿½o:
+	// - Febrero tiene 28 dï¿½as si el aï¿½o no es bisiesto.
+	// - Febrero tiene 29 dï¿½as si el aï¿½o es bisiesto.
+	// - Abril, Junio, Septiembre y Noviembre tienen 30 dï¿½as.
+	// - Enero, Marzo, Mayo, Julio, Agosto, Octubre y Diciembre tienen 31 dï¿½as.
 	private static int obtenerNumeroDiasDeMes(int mes, int agno) {
 		int numeroDiasMes = 31;
 		if (mes == 2) {
@@ -64,12 +64,12 @@ public class Fecha implements Comparable<Fecha> {
 		return numeroDiasMes;
 	}
 
-	// Valida los datos de una fecha según las condiciones:
-	// - Se sigue el calendario gregoriano, que se basa en años bisiestos y años no bisiestos.
-	// - El año debe estar comprendido entre 1583 y 2999.
+	// Valida los datos de una fecha segï¿½n las condiciones:
+	// - Se sigue el calendario gregoriano, que se basa en aï¿½os bisiestos y aï¿½os no bisiestos.
+	// - El aï¿½o debe estar comprendido entre 1583 y 2999.
 	// - El mes debe estar comprendido entre 1 y 12.
-	// - El día debe estar comprendido entre 1 y el número de días que tiene el mes del año.
-	// Devuelve verdadero si los datos de una fecha son válidos.
+	// - El dï¿½a debe estar comprendido entre 1 y el nï¿½mero de dï¿½as que tiene el mes del aï¿½o.
+	// Devuelve verdadero si los datos de una fecha son vï¿½lidos.
 	// Devuelve falso en caso contrario.
 	public static boolean esValida(int dia, int mes, int agno) {
 		boolean fechaValida = true;
@@ -94,7 +94,7 @@ public class Fecha implements Comparable<Fecha> {
 	}
 
 	// Compara esta fecha con otra fecha 
-	// por año ascendente, mes ascendente y día ascendente.
+	// por aï¿½o ascendente, mes ascendente y dï¿½a ascendente.
 	@Override
 	public int compareTo(Fecha otra) {
 		String estaFecha = String.format("%04d%02d%02d", 

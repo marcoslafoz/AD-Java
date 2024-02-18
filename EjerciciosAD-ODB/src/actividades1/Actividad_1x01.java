@@ -2,10 +2,8 @@ package actividades1;
 
 import java.util.List;
 
+import actividades2.Fecha;
 import entrada.Teclado;
-import modelo.Equipo;
-import modelo.Fecha;
-import modelo.Jugador;
 
 public class Actividad_1x01 {
 	public static void main(String[] args) {

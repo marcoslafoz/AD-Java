@@ -5,9 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import modelo.Departamento;
-import modelo.Empleado;
-
 public class CrearBDDepartamento {
 
 	public static void main(String[] args) {

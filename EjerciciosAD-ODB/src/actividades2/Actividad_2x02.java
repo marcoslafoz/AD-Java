@@ -1,8 +1,6 @@
 package actividades2;
 
 import entrada.Teclado;
-import modelo.Departamento;
-import modelo.Empleado;
 
 /*
 ACTIVIDAD 1x02
@@ -17,7 +15,7 @@ los empleados de la base de datos personal mediante el siguiente menú de opcion
 
 */
 
-public class Actividad_1x02 {
+public class Actividad_2x02 {
 	public static void main(String[] args) {
 
 		int opcion = 1;

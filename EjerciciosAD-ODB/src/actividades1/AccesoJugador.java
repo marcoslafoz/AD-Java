@@ -7,9 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
-import modelo.Equipo;
-import modelo.Fecha;
-import modelo.Jugador;
+
+import actividades2.Fecha;
 
 public class AccesoJugador {
 	public static void mostrarMenu() {
