@@ -1,7 +1,5 @@
 package actividades1;
 
-import java.util.List;
-
 import entrada.Teclado;
 import modelo.Equipo;
 
