@@ -1,0 +1,6 @@
+Línea 1: 20 caracteres y 4 palabras
+Línea 2: 4 caracteres y 1 palabras
+Línea 3: 27 caracteres y 6 palabras
+Línea 4: 5 caracteres y 1 palabras
+Línea 5: 14 caracteres y 4 palabras
+Total: 5 líneas, 70 caracteres y 16 palabras
