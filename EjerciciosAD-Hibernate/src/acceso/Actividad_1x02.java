@@ -55,8 +55,6 @@ public class Actividad_1x02 {
 						empleado.setCodigo((short) 99);
 						System.out.println(empleado.toString());
 						AccesoEmpleado.insertarUno(empleado);
-					} else {
-						System.out.println("No existe ningun departamento con ese codigo");
 					}
 					break;
 

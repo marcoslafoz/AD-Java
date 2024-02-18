@@ -2,7 +2,6 @@ package acceso;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.TypedQuery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +9,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import ejemplos.HibernateUtil;
-import entrada.Teclado;
 import modelo.Departamento;
 
 public class AccesoDepartamento {
@@ -43,6 +41,7 @@ public class AccesoDepartamento {
 	// Devuelve una lista de departamentos con los resultados.
 	// Lanza una excepci�n de Hibernate
 	// si ocurre un error al acceder a la base de datos.
+	@SuppressWarnings("unchecked")
 	public static List<Departamento> consultarTodos() throws HibernateException {
 
 		Session sesion = null;
@@ -53,6 +52,7 @@ public class AccesoDepartamento {
 			SessionFactory fabricaSesiones = HibernateUtil.getSessionFactory();
 			sesion = fabricaSesiones.openSession();
 			String sentenciaHQL = "select d from Departamento d";
+			@SuppressWarnings("rawtypes")
 			Query consulta = sesion.createQuery(sentenciaHQL);
 			listaDepartamentos = consulta.list();
 			return listaDepartamentos;

@@ -3,7 +3,6 @@ package acceso;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.TypedQuery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +10,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import ejemplos.HibernateUtil;
-import modelo.Departamento;
 import modelo.Empleado;
 
 public class AccesoEmpleado {
