@@ -11,7 +11,7 @@ public class ConsultarProductos {
 			Database database = (Database) cl.newInstance();
 			DatabaseManager.registerDatabase(database);
 			
-			String url = "xmldb:exist://localhost:8090/exist/xmlrpc/db/ColeccionPruebas";
+			String url = "xmldb:exist://localhost:8080/exist/xmlrpc/db/ColeccionPruebas";
 			Collection coleccion = DatabaseManager.getCollection(url, "admin", "admin");
 			if (coleccion == null) {
 				System.out.println("La colección no existe.");
