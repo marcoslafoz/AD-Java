@@ -1,3 +1,4 @@
+package ejemplos;
 import org.xmldb.api.*;
 import org.xmldb.api.base.*;
 import org.xmldb.api.modules.*;
