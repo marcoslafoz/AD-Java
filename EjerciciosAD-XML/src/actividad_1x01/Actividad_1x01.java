@@ -23,6 +23,11 @@ public class Actividad_1x01 {
 
 				break;
 
+			case 3: 
+				
+				AccesoProducto.consultarProductoPorCodigo();
+				break;
+				
 			default:
 				System.out.println("\nOpcion inválida.");
 				break;

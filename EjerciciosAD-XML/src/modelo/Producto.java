@@ -23,7 +23,7 @@ public class Producto {
 	
 	// Crea un producto a partir de 1 parámetro.
 	public Producto(String elemento) {
-		String texto = extraerTexto(elemento, "codigo");
+		String texto = extraerTexto(elemento, "cod_prod");
 		this.codigo = Integer.parseInt(texto);
 		this.denominacion = extraerTexto(elemento, "denominacion");
 		texto = extraerTexto(elemento, "precio");
@@ -32,7 +32,7 @@ public class Producto {
 		this.stockActual = Integer.parseInt(texto);
 		texto = extraerTexto(elemento, "stock_minimo");
 		this.stockMinimo = Integer.parseInt(texto);
-		texto = extraerTexto(elemento, "codigo_zona");
+		texto = extraerTexto(elemento, "cod_zona");
 		this.codigoZona = Integer.parseInt(texto);
 	}
 	
