@@ -7,37 +7,40 @@ import modelo.Producto;
 
 public class Actividad_1x01 {
 	public static void main(String[] args) {
+		
+		
+		
+		try {
+			int opcion = -1;
 
-		int opcion = -1;
+			while (opcion != 0) {
+				AccesoProducto.mostrarMenu();
+				opcion = Teclado.leerEntero("Introduce una opción: ");
 
-		while (opcion != 0) {
-			AccesoProducto.mostrarMenu();
-			opcion = Teclado.leerEntero("Introduce una opción: ");
+				switch (opcion) {
+				case 0:
 
-			switch (opcion) {
-			case 0:
+					System.out.println("Saliendo del programa.");
+					break;
 
-				System.out.println("Saliendo del programa.");
-				break;
+				///////////////// CONSULTAR TODOS LOS PRODUCTOS //////////////////
+				case 2:
 
-			///////////////// CONSULTAR TODOS LOS PRODUCTOS //////////////////
-			case 2:
+					List<Producto> listaProductosConsultar = AccesoProducto.consultarProductos();
 
-				List<Producto> listaProductosConsultar = AccesoProducto.consultarProductos();
-
-				if (listaProductosConsultar.size() > 0) {
-					for (Producto p : listaProductosConsultar) {
-						System.out.println(p.toString());
+					if (listaProductosConsultar.size() > 0) {
+						for (Producto p : listaProductosConsultar) {
+							System.out.println(p.toString());
+						}
+						System.out.println("Se han consultado " + listaProductosConsultar.size() + " productos");
+					} else {
+						System.out.println("No se han encontrado  productos");
 					}
-					System.out.println("Se han consultado " + listaProductosConsultar.size() + " productos");
-				} else {
-					System.out.println("No se han encontrado  productos");
-				}
 
-				break;
+					break;
 
-			//////////////////// CONSULTAR PRODUCTO POR CÓDIGO //////////////////////
-			case 3:
+				//////////////////// CONSULTAR PRODUCTO POR CÓDIGO //////////////////////
+				case 3:
 
 				int codigoProductoConsultar = Teclado.leerEntero("Introduce el código del departamento a consultar");
 				Producto productoConsultarPorCodigo = AccesoProducto
@@ -50,14 +53,27 @@ public class Actividad_1x01 {
 					System.out.println("No se ha encontrado ningun producto");
 				}
 
-				break;
+					break;
+					
+				case 4:
+					//System.out.println(AccesoProducto.consultarCodigoMaximo());
+					//AccesoProducto.insertarProducto(Teclado.leerEntero("Introduce el codigo"));
+					//AccesoProducto.eliminarProducto(10000);
+					AccesoProducto.actualizarProducto(1014);
+					break;
 
-			//////////////////// DEFAULT //////////////////////
-			default:
-				System.out.println("\nOpcion inválida.");
-				break;
+				//////////////////// DEFAULT //////////////////////
+				default:
+					System.out.println("\nOpcion inválida.");
+					break;
 
+				}
 			}
+		} catch (Exception e) {
+			System.out.println("Error al acceder a la base de datos eXist-db:");
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
+
 	}
 }

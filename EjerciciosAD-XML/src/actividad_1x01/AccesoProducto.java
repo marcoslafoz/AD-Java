@@ -11,7 +11,10 @@ import org.xmldb.api.base.ResourceIterator;
 import org.xmldb.api.base.ResourceSet;
 import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.XPathQueryService;
+
+import entrada.Teclado;
 import modelo.Producto;
+import utils.ConfigDB;
 
 public class AccesoProducto {
 
@@ -29,38 +32,28 @@ public class AccesoProducto {
 	//////////////////// CONECTAR //////////////////////
 	private static Collection conectar()
 			throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
-		final String NOMBRE_COLECCION = "ColeccionPruebas";
-		final String URL = "xmldb:exist://localhost:8080/exist/xmlrpc/db/" + NOMBRE_COLECCION;
-		Class cl = Class.forName("org.exist.xmldb.DatabaseImpl");
+		Class cl = Class.forName(ConfigDB.EXIST_DRIVER);
 		Database database = (Database) cl.newInstance();
 		DatabaseManager.registerDatabase(database);
-		return DatabaseManager.getCollection(URL, "admin", "admin");
-	}
-
-	///////////////// CERRAR CONEXIÓN //////////////////////
-	private static void cerrarConexion(Collection coleccion) {
-		if (coleccion != null) {
-			try {
-				coleccion.close();
-			} catch (XMLDBException xmldbe) {
-				System.out.println("Error de base de datos XML: " + xmldbe.getMessage());
-			}
-		}
+		return DatabaseManager.getCollection(ConfigDB.DB_URL, ConfigDB.DB_USERNAME, ConfigDB.DB_PASSWORD);
 	}
 
 	///////////////// CONSULTAR TODOS LOS PRODUCTOS //////////////////
-	public static List<Producto> consultarProductos() {
+	public static List<Producto> consultarProductos()
+			throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
+
 		Collection coleccion = null;
 		List<Producto> listaProductos = null;
+
 		try {
 
 			coleccion = conectar();
-			
+
 			XPathQueryService servicio = (XPathQueryService) coleccion.getService("XPathQueryService", "1.0");
 			String consulta = "for $prod in /productos/produc order by $prod/denominacion return $prod";
 			ResourceSet resultados = servicio.query(consulta);
 			ResourceIterator iterador = resultados.getIterator();
-			
+
 			listaProductos = new ArrayList<>();
 
 			while (iterador.hasMoreResources()) {
@@ -70,16 +63,18 @@ public class AccesoProducto {
 				listaProductos.add(productoTemp);
 			}
 
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | XMLDBException e) {
-			System.out.println("Error: " + e.getMessage());
 		} finally {
-			cerrarConexion(coleccion);
+			if (coleccion != null && coleccion.isOpen()) {
+				coleccion.close();
+			}
 		}
+
 		return listaProductos;
 	}
 
-	//////////////////// CONSULTAR PRODUCTO POR CÓDIGO //////////////////////
-	public static Producto consultarProductoPorCodigo(int codigo) {
+	////////////////// CONSULTAR PRODUCTO POR CÓDIGO //////////////////////
+	public static Producto consultarProductoPorCodigo(int codigo)
+			throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
 
 		Producto producto = null;
 		Collection coleccion = null;
@@ -98,11 +93,148 @@ public class AccesoProducto {
 				String productoString = (String) recurso.getContent();
 				producto = new Producto(productoString);
 			}
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | XMLDBException e) {
-			System.out.println("Error: " + e.getMessage());
 		} finally {
-			cerrarConexion(coleccion);
+			if (coleccion != null && coleccion.isOpen()) {
+				coleccion.close();
+			}
 		}
 		return producto;
 	}
+
+	////////////////// CONSULTAR CÓDIGO MÁXIMO //////////////////////
+	public static int consultarCodigoMaximo()
+			throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
+
+		int codigoMaximo = 0;
+
+		Collection coleccion = null;
+		try {
+
+			coleccion = conectar();
+
+			XPathQueryService servicio = (XPathQueryService) coleccion.getService("XPathQueryService", "1.0");
+
+			String consulta = "let $maximo := max(/productos/produc/cod_prod)" + "return $maximo";
+			ResourceSet resultados = servicio.query(consulta);
+
+			ResourceIterator iterador = resultados.getIterator();
+			if (iterador.hasMoreResources()) {
+				Resource recurso = iterador.nextResource();
+				codigoMaximo = Integer.parseInt((String) recurso.getContent());
+
+			}
+		} finally {
+			if (coleccion != null && coleccion.isOpen()) {
+				coleccion.close();
+			}
+		}
+
+		return codigoMaximo;
+	}
+
+	////////////////// INSERTAR PRODUCTO //////////////////////
+	public static void insertarProducto(int codigo)
+			throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
+
+		Collection coleccion = null;
+		try {
+
+			coleccion = conectar();
+
+			XPathQueryService servicio = (XPathQueryService) coleccion.getService("XPathQueryService", "1.0");
+
+			String denominacion = Teclado.leerCadena("¿Denominación? ");
+			double precio = Teclado.leerReal("¿Precio? ");
+			int stockActual = Teclado.leerEntero("¿Stock Actual? ");
+			int stockMinimo = Teclado.leerEntero("¿Stock Mínimo? ");
+			int codigoZona = Teclado.leerEntero("¿Código de Zona? ");
+
+			String sentenciaInsertarProducto = "update insert " + "<produc>" + "<cod_prod>" + codigo + "</cod_prod>"
+					+ "<denominacion>" + denominacion + "</denominacion>" + "<precio>" + String.format("%.2f", precio)
+					+ "</precio>" + "<stock_actual>" + stockActual + "</stock_actual>" + "<stock_minimo>" + stockMinimo
+					+ "</stock_minimo>" + "<cod_zona>" + codigoZona + "</cod_zona>" + "</produc> " + "into /productos";
+			ResourceSet resultados2 = servicio.query(sentenciaInsertarProducto);
+
+			System.out.println("Se ha insertado con éxito un nuevo producto en el XML.");
+
+		} finally {
+			if (coleccion != null && coleccion.isOpen()) {
+				coleccion.close();
+			}
+		}
+	}
+
+	////////////////// ELIMINAR PRODUCTO //////////////////////
+	public static boolean eliminarProducto(int codigo)
+			throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
+
+		boolean productoEliminado = false;
+
+		Collection coleccion = null;
+		try {
+
+			coleccion = conectar();
+
+			XPathQueryService servicio = (XPathQueryService) coleccion.getService("XPathQueryService", "1.0");
+
+			Producto productoEliminar = consultarProductoPorCodigo(codigo);
+
+			if (productoEliminar != null) {
+				String sentenciaEliminarProducto = "update delete " + "/productos/produc[cod_prod = " + codigo + "]";
+				ResourceSet resultados = servicio.query(sentenciaEliminarProducto);
+				productoEliminado = true;
+			}
+
+		} finally {
+			if (coleccion != null && coleccion.isOpen()) {
+				coleccion.close();
+			}
+		}
+
+		return productoEliminado;
+	}
+
+	////////////////// ACTUALIZAR PRODUCTO //////////////////////
+	public static boolean actualizarProducto(int codigo)
+			throws ClassNotFoundException, IllegalAccessException, InstantiationException, XMLDBException {
+
+		boolean productoActualizado = false;
+
+		Collection coleccion = null;
+		try {
+
+			coleccion = conectar();
+
+			XPathQueryService servicio = (XPathQueryService) coleccion.getService("XPathQueryService", "1.0");
+
+			Producto productoActualizar = consultarProductoPorCodigo(codigo);
+
+			if (productoActualizar != null) {
+
+				String denominacion = Teclado.leerCadena("¿Denominación? ");
+				double precio = Teclado.leerReal("¿Precio? ");
+				int stockActual = Teclado.leerEntero("¿Stock Actual? ");
+				int stockMinimo = Teclado.leerEntero("¿Stock Mínimo? ");
+				int codigoZona = Teclado.leerEntero("¿Código de Zona? ");
+
+				String sentenciaActualizarProducto = "update replace " + "/productos/produc[cod_prod = " + codigo
+						+ "] with " + "<produc>" + "<cod_prod>" + codigo + "</cod_prod>" + "<denominacion>"
+						+ denominacion + "</denominacion>" + "<precio>" + String.format("%.2f", precio) + "</precio>"
+						+ "<stock_actual>" + stockActual + "</stock_actual>" + "<stock_minimo>" + stockMinimo
+						+ "</stock_minimo>" + "<cod_zona>" + codigoZona + "</cod_zona>" + "</produc>";
+				ResourceSet resultados = servicio.query(sentenciaActualizarProducto);
+
+				productoActualizado = true;
+
+			}
+
+		} finally {
+			if (coleccion != null && coleccion.isOpen()) {
+				coleccion.close();
+			}
+		}
+
+		return productoActualizado;
+	}
+
 }
