@@ -1,0 +1,47 @@
+db.libros.insert(
+	{
+		"codigo": NumberInt("1"),
+		"titulo": "Dune", 
+		"autor": "Frank Herbert", 
+		"agno": NumberInt("1965"), 
+		"genero": "ciencia-ficción"
+	}
+);
+db.libros.insert(
+	{
+		"codigo": NumberInt("2"),
+		"titulo": "El Señor de los Anillos", 
+		"autor": "J. R. R. Tolkien", 
+		"agno": NumberInt("1955"), 
+		"genero": "fantasía",
+		"partes": [
+			"La Comunidad del Anillo", 
+			"Las Dos Torres", 
+			"El Retorno del Rey"
+		]
+	}
+);
+db.libros.insert(
+	{
+		"codigo": NumberInt("3"),
+		"titulo": "El Hobbit", 
+		"autor": "J. R. R. Tolkien", 
+		"agno": NumberInt("1937"), 
+		"genero": "fantasía",
+		"numero_paginas": NumberInt("283")
+	}
+);
+db.libros.insert(
+	{
+		"codigo": NumberInt("4"),
+		"titulo": "El Sabueso de los Baskerville", 
+		"autor": "Arthur Conan Doyle", 
+		"agno": NumberInt("1902"), 
+		"genero": "misterio",
+		"personajes": [
+			"Sherlock Holmes", 
+			"James Watson"
+		],
+		"numero_paginas": NumberInt("243")
+	}
+);
