@@ -22,6 +22,22 @@ public class GestorBiblioteca {
 					System.out.println("Saliendo del programa.");
 					break;
 
+				///////////////// INSERTAR LIBRO //////////////////
+				case 1:
+
+					Libro libroInsertar = new Libro(Teclado.leerEntero("Codigo: "), Teclado.leerCadena("Titulo: "),
+							Teclado.leerEntero("Año: "), Teclado.leerCadena("Genero: "));
+
+					boolean libroInsertartado = AccesoBiblioteca.insertarLibro(libroInsertar);
+
+					if (libroInsertartado == true) {
+						System.out.println("Libro insertado con exito");
+					} else {
+						System.out.println("Libro no insertado");
+					}
+
+					break;
+
 				///////////////// CONSULTAR TODOS LOS LIBROS //////////////////
 				case 2:
 
@@ -36,6 +52,45 @@ public class GestorBiblioteca {
 						}
 
 						System.out.println("Se han consultado " + resultados.size() + " libros.");
+					}
+
+					break;
+
+				///////////////// CONSULTAR LIBRO POR CODIGO //////////////////
+				case 3:
+
+					Libro libroConsultadoPorCodigo = AccesoBiblioteca
+							.consultarLibroPorCodigo(Teclado.leerEntero("Codigo de libro a consultar: "));
+
+					if (libroConsultadoPorCodigo != null) {
+						System.out.println(libroConsultadoPorCodigo.toString());
+					} else {
+						System.out.println("No se ha consultado ningun libro");
+					}
+
+					break;
+
+				///////////////// ACTUALIZAR LIBRO //////////////////
+				case 4:
+
+					Libro libroActualizar = new Libro(Teclado.leerEntero("Codigo: "), Teclado.leerCadena("Titulo: "), Teclado.leerEntero("Año: "), Teclado.leerCadena("Genero: "));
+					long librosActualizados = AccesoBiblioteca.actualizarLibro(libroActualizar);
+					
+					if(librosActualizados > 0) {
+						System.out.println("Libro insertado con exito");
+					}else {
+						System.out.println("El libro no se ha actualizado");
+					}
+					
+					break;
+
+				///////////////// ELIMINAR LIBRO POR CODIGO //////////////////
+				case 5:
+
+					if (AccesoBiblioteca.eliminarLibroPorCodigo(Teclado.leerEntero("Codigo libro a eliminar: ")) > 0) {
+						System.out.println("Libro eliminado correctamente");
+					} else {
+						System.out.println("No se ha eliminado ningún libro");
 					}
 
 					break;
