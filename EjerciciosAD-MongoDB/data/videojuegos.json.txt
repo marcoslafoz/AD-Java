@@ -1,0 +1,55 @@
+db.videojuegos.insert(
+	{
+		"codigo": NumberInt("1"),
+		"titulo": "The Last of Us",
+		"agno": NumberInt("2013"),
+		"desarrollador": "Naughty Dog",
+		"precio": 21.90
+	}
+);
+db.videojuegos.insert(
+	{
+		"codigo": NumberInt("2"),
+		"titulo": "Grand Theft Auto V",
+		"agno": NumberInt("2013"),
+		"desarrollador": "Rockstar Games",
+		"precio": 29.10
+	}
+);
+db.videojuegos.insert(
+	{
+		"codigo": NumberInt("3"),
+		"titulo": "The Legend of Zelda: Breath of the Wild",
+		"agno": NumberInt("2017"),
+		"desarrollador": "Nintendo",
+		"precio": 69.90
+	}
+);
+db.videojuegos.insert(
+	{
+		"codigo": NumberInt("4"),
+		"titulo": "Super Mario Odyssey",
+		"agno": NumberInt("2017"),
+		"desarrollador": "Nintendo",
+		"precio": 49.50
+	}
+);
+db.videojuegos.insert(
+	{
+		"codigo": NumberInt("5"),
+		"titulo": "Ori and the Blind Forest",
+		"agno": NumberInt("2015"),
+		"desarrollador": "Moon Studios",
+		"precio": 17.50
+	}
+);
+db.videojuegos.insert(
+	{
+		"codigo": NumberInt("6"),
+		"titulo": "Forza Horizon 5",
+		"agno": NumberInt("2021"),
+		"desarrollador": "Playground Games",
+		"precio": 29.50
+	}
+);
+
