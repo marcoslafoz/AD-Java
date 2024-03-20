@@ -27,9 +27,9 @@ public class AccesoVideojuegos {
 	public static String mostrarMenu() {
 		return "\r\n(0) Salir del programa.\r\n" + "(1) Insertar un videojuego en la base de datos.\r\n"
 				+ "(2) Consultar todos los videojuegos de la base de datos.\r\n"
-				+ "(3) Consultar un videojuego, por código, de la base de datos.\r\n"
-				+ "(4) Actualizar un videojuego, por código, de la base de datos.\r\n"
-				+ "(5) Eliminar un videojuego, por código, de la base de datos.";
+				+ "(3) Consultar un videojuego, por cï¿½digo, de la base de datos.\r\n"
+				+ "(4) Actualizar un videojuego, por cï¿½digo, de la base de datos.\r\n"
+				+ "(5) Eliminar un videojuego, por cï¿½digo, de la base de datos.";
 	}
 
 	//////////////////// CONSULTAR TODOS //////////////////////
@@ -51,7 +51,9 @@ public class AccesoVideojuegos {
 			}
 
 		} finally {
-			cliente.close();
+			if (cliente != null) {
+				cliente.close();
+			}
 		}
 
 		return resultados;
@@ -76,7 +78,9 @@ public class AccesoVideojuegos {
 						elementoDoc.getDouble("precio"));
 			}
 		} finally {
-			cliente.close();
+			if (cliente != null) {
+				cliente.close();
+			}
 		}
 
 		return elemento;
@@ -107,7 +111,9 @@ public class AccesoVideojuegos {
 			}
 
 		} finally {
-			cliente.close();
+			if (cliente != null) {
+				cliente.close();
+			}
 		}
 
 		return esInsertado;
@@ -128,7 +134,9 @@ public class AccesoVideojuegos {
 			nElementosEliminados = resultado.getDeletedCount();
 
 		} finally {
-			cliente.close();
+			if (cliente != null) {
+				cliente.close();
+			}
 		}
 
 		return nElementosEliminados;
@@ -156,13 +164,15 @@ public class AccesoVideojuegos {
 			nElementosActualizados = resultado.getModifiedCount();
 
 		} finally {
-			cliente.close();
+			if (cliente != null) {
+				cliente.close();
+			}
 		}
 
 		return nElementosActualizados;
 	}
 
-	//////////////////// CONSULTAR CODIGO MÁXIMO //////////////////////
+	//////////////////// CONSULTAR CODIGO Mï¿½XIMO //////////////////////
 	public static int consultarCodigoMaximo() throws Exception {
 		MongoClient cliente = null;
 		int codigoMaximo = 0;
@@ -205,6 +215,36 @@ public class AccesoVideojuegos {
 						elementoDoc.getInteger("agno"), elementoDoc.getString("desarrollador"),
 						elementoDoc.getDouble("precio"));
 				resultados.add(elemento);
+			}
+
+		} finally {
+			if (cliente != null) {
+				cliente.close();
+			}
+		}
+
+		return resultados;
+	}
+
+	//////////////////// FILTRAR ELEMENTOS POR Aï¿½O //////////////////////
+	public static List<Videojuego> consultarPorAgno(int agno) throws Exception {
+		MongoClient cliente = null;
+		List<Videojuego> resultados = new ArrayList<>();
+
+		try {
+			cliente = new MongoClient();
+			MongoDatabase bd = cliente.getDatabase(ConfigDB.DB_NAME);
+			MongoCollection<Document> collection = bd.getCollection(ConfigDB.COLLECTION_NAME_1);
+
+			Bson filtro = eq("agno", agno);
+			MongoCursor<Document> cursor = collection.find(filtro).iterator();
+
+			while (cursor.hasNext()) {
+				Document elementoDoc = cursor.next();
+
+				resultados.add(new Videojuego(elementoDoc.getInteger("codigo"), elementoDoc.getString("titulo"),
+						elementoDoc.getInteger("agno"), elementoDoc.getString("desarrollador"),
+						elementoDoc.getDouble("precio")));
 			}
 
 		} finally {

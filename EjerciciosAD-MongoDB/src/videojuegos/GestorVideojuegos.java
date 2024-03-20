@@ -124,6 +124,24 @@ public class GestorVideojuegos {
 
 					break;
 
+				///////////////// CONSULTAR ELEMENTOS FILTRADOS POR AÑO//////////////////
+				case 8:
+
+					List<Videojuego> resultadosFiltradosPorAgno = AccesoVideojuegos.consultarPorAgno(2013);
+
+					if (resultadosFiltradosPorAgno.isEmpty()) {
+						System.out.println("No se ha encontrado ningún elemento.");
+					} else {
+
+						for (Videojuego ef : resultadosFiltradosPorAgno) {
+							System.out.println(ef.toString());
+						}
+
+						System.out.println("Se han consultado " + resultadosFiltradosPorAgno.size() + " elemento.");
+					}
+
+					break;
+
 				//////////////////// DEFAULT //////////////////////
 				default:
 					System.out.println("\nOpcion inválida.");
